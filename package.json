@@ -1,0 +1,48 @@
+{
+  "name": "forewarn",
+  "version": "0.0.1",
+  "description": "Scoped and styled warning logger",
+  "license": "MIT",
+  "main": "index.js",
+  "browser": "browser.js",
+  "files": [
+    "index.js",
+    "browser.js"
+  ],
+  "author": {
+    "name": "Vincent Weevers",
+    "email": "mail@vincentweevers.nl",
+    "url": "vincentweevers.nl"
+  },
+  "scripts": {
+    "test": "babel-node test.js | tap-spec",
+    "transpile": "babel src.js > index.js",
+    "browserify": "browserify -x chalk -t babelify -g uglifyify src.js > browser.js",
+    "build": "npm run transpile && npm run browserify",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "chalk": "~1.1.1",
+    "detect-node": "~2.0.3",
+    "global": "~4.3.0",
+    "in-production": "~1.0.1"
+  },
+  "devDependencies": {
+    "babelify": "~6.4.0",
+    "proxyquire": "~1.7.3",
+    "tape": "~4.2.2",
+    "uglifyify": "~3.0.1"
+  },
+  "keywords": [
+    "warning",
+    "warn",
+    "console"
+  ],
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=2.0.0"
+  },
+  "repository": "vweevers/node-forewarn",
+  "bugs": "https://github.com/vweevers/node-forewarn/issues",
+  "homepage": "https://github.com/vweevers/node-forewarn"
+}
