@@ -4,10 +4,11 @@
   "description": "Scoped and styled warning logger",
   "license": "MIT",
   "main": "index.js",
-  "browser": "browser.js",
+  "browser": {
+    "chalk": false
+  },
   "files": [
-    "index.js",
-    "browser.js"
+    "index.js"
   ],
   "author": {
     "name": "Vincent Weevers",
@@ -16,9 +17,7 @@
   },
   "scripts": {
     "test": "babel-node test.js | tap-spec",
-    "transpile": "babel src.js > index.js",
-    "browserify": "browserify -s forewarn -x chalk -t babelify -g uglifyify src.js > browser.js",
-    "build": "npm run transpile && npm run browserify",
+    "build": "babel src.js > index.js",
     "prepublish": "npm run build"
   },
   "dependencies": {
@@ -28,10 +27,8 @@
     "in-production": "~1.0.1"
   },
   "devDependencies": {
-    "babelify": "~6.4.0",
     "proxyquire": "~1.7.3",
-    "tape": "~4.2.2",
-    "uglifyify": "~3.0.1"
+    "tape": "~4.2.2"
   },
   "keywords": [
     "warning",
