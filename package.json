@@ -1,6 +1,6 @@
 {
   "name": "forewarn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scoped and styled warning logger",
   "license": "MIT",
   "main": "index.js",
