@@ -17,7 +17,7 @@
   "scripts": {
     "test": "babel-node test.js | tap-spec",
     "transpile": "babel src.js > index.js",
-    "browserify": "browserify -x chalk -t babelify -g uglifyify src.js > browser.js",
+    "browserify": "browserify -s forewarn -x chalk -t babelify -g uglifyify src.js > browser.js",
     "build": "npm run transpile && npm run browserify",
     "prepublish": "npm run build"
   },
